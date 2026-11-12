@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b2d"><meta name="description" content="Banco de questões para preparação SAEP — Técnico em Desenvolvimento de Sistemas.">
+<title>Trilha DS — Preparação SAEP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body><div class="app">
+<header class="topbar"><div class="brand"><div class="brand-mark">DS</div><div><div class="brand-title">Trilha DS</div><div class="brand-sub">Preparação para o SAEP · Técnico em Desenvolvimento de Sistemas</div></div></div><div class="top-spacer"></div><button class="top-action" id="themeBtn" aria-label="Alternar tema">◐ Tema</button></header>
+<main>
+<section id="home">
+ <div class="hero"><div class="hero-copy"><div class="eyebrow">Estudo orientado por competências</div><h1>Treine como quem resolve problemas reais.</h1><p>Questões contextualizadas, códigos para interpretar e cenários de desenvolvimento alinhados ao plano de curso do SENAI-SP.</p><div class="hero-note">✦ Banco de questões revisado · 12 unidades curriculares</div></div><aside class="hero-side"><div><div class="stat-label">Questões disponíveis</div><div class="stat-number" id="totalQ">216</div><div class="stat-foot">18 por disciplina</div></div><hr class="stat-divider"><div><div class="stat-label">Seu desempenho</div><div class="stat-number" id="overallPct">—</div><div class="stat-foot" id="overallFoot">Jogue uma rodada para começar</div></div></aside></div>
+ <div class="section-head"><div><h2>Escolha uma disciplina</h2><p>Selecione uma área ou misture conteúdos de todo o curso.</p></div><span class="hint" id="discCount">12 disciplinas</span></div>
+ <div class="disc-grid" id="discs"></div>
+ <div class="controls">
+  <section class="panel"><h3>Modo de estudo</h3><div class="seg" id="modeSeg"><button class="active" data-value="timed">Com tempo · 60s</button><button data-value="free">Sem tempo</button></div></section>
+  <section class="panel"><h3>Quantidade de questões</h3><div class="seg" id="qtySeg"><button data-value="5">5</button><button data-value="10">10</button><button class="active" data-value="15">15</button><button data-value="20">20</button><button data-value="all">Todas</button></div></section>
+  <section class="panel"><h3>Identificação (opcional)</h3><input class="field" id="studentName" maxlength="24" placeholder="Como podemos chamar você?"><p class="hint">O ranking fica salvo somente neste navegador.</p></section>
+ </div>
+ <div class="start-row"><button class="primary" id="startBtn">Começar simulado <span aria-hidden="true">→</span></button><span class="hint">As questões e alternativas são embaralhadas a cada rodada.</span></div>
+ <section class="panel ranking"><div class="section-head" style="margin:0 0 10px"><div><h2>Seu histórico neste aparelho</h2><p>Resultados recentes de estudo.</p></div><button class="secondary" id="clearRank">Limpar histórico</button></div><div id="rankArea" class="empty">Nenhuma rodada concluída ainda.</div></section>
+ <div class="footnote">Base curricular: Plano de Curso SENAI-SP — Técnico em Desenvolvimento de Sistemas (2023). As questões são autorais ou adaptadas para estudo, com indicação das questões identificadas na avaliação SAEP 2024. A captura de tela é ilustrativa; as respostas foram conferidas pelo raciocínio técnico, não pela alternativa marcada na imagem.</div>
+</section>
+<section id="game" class="hidden quiz-wrap" aria-live="polite">
+ <div class="quiz-top"><button class="secondary" id="quitBtn">← Sair</button><span class="pill" id="disciplinePill">Disciplina</span><span class="spacer"></span><span class="pill" id="progressPill">1 / 15</span><span class="pill" id="pointsPill">0 pts</span></div>
+ <div class="progress"><div id="progressBar"></div></div>
+ <article class="question-card"><div class="q-meta"><span class="q-tag" id="qTag"></span><span class="q-origin hidden" id="qOrigin"></span></div><h2 class="q-text" id="qText"></h2><img id="qImage" class="q-image hidden" alt="Imagem de apoio da questão SAEP"><div class="options" id="options"></div><div class="feedback hidden" id="feedback"></div><div class="quiz-actions"><div class="timer" id="timerWrap"><div id="timerBar"></div></div><span class="hint" id="timerLabel">60 segundos</span><button class="primary hidden" id="nextBtn">Próxima questão →</button></div></article>
+</section>
+<section id="result" class="hidden quiz-wrap"><article class="question-card result-card"><div class="eyebrow" style="color:var(--brand)">Rodada concluída</div><div class="score" id="finalScore">0%</div><h2 id="resultTitle">Resultado</h2><p id="resultText"></p><div class="result-breakdown" id="resultStats"></div><button class="primary" id="homeBtn">Voltar às disciplinas</button><div class="review-list" id="reviewList"></div></article></section>
+</main></div>
+<script src="script.js" defer></script></body></html>
